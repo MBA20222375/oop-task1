@@ -60,7 +60,7 @@ class Book extends Product {
     }
 
     public function showAllPublishers() {
-        print_r($this->publishers);
+        echo($this->publishers);
     }
 }
 
@@ -99,5 +99,6 @@ class BabyCar extends Product {
         return $this->price + $this->specialTax;
     }
 }
+
 
 
