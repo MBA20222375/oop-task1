@@ -11,20 +11,24 @@ class Product {
         $this->price = $price;
         $this->description = $description;
         $this->image = $image;
-        echo "Product : $this->name <br>";
     }
 
-    public function uploadImage($image) {
-        $this->image = $image;
-        echo "Image uploaded <br>";
+    public function getName() {
+        return $this->name;
     }
 
-    public function calcPrice() {
+    public function priceAfterDiscount($discount) {
+        return $this->price - ($this->price * $discount / 100);
+    }
+
+    public function getFinalPrice() {
         return $this->price;
     }
 }
-$pro1=new Product("Laptop", 1000, " laptop", "laptop.jpg");
-$pro2=new Product("Phone", 500, "phone", "phone.jpg");
+
+
+
+
 
 
 class Book extends Product {
@@ -60,7 +64,6 @@ class Book extends Product {
     }
 }
 
-$book1 = new Book("PHP Programming", 50, "A book about PHP", "php_book.jpg", "John Doe", "Blue", "BookSupplier Inc.");
 
 class Gift extends Product {
     public $type;
@@ -70,7 +73,6 @@ class Gift extends Product {
         $this->type = $type;
     }
 }
-$gift1 = new Gift("Teddy Bear", 30, "A soft teddy bear", "teddy.jpg", "Toy");
 
 class BabyCar extends Product {
     public $age;
@@ -97,6 +99,5 @@ class BabyCar extends Product {
         return $this->price + $this->specialTax;
     }
 }
-$babyCar1 = new BabyCar("Baby Stroller", 200, "A ", "stroller.jpg", "0-3 years", "15kg", 20);
 
 
